@@ -1,0 +1,22 @@
+{
+  "name": "Tiệm Chu Du - Merchandise",
+  "short_name": "Tiệm Chu Du",
+  "description": "Order & Pickup tất tần tật - K-pop, J-pop, C-pop hàng chính hãng",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e3a6b",
+  "theme_color": "#1e3a6b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/logo-tiem-chu-du.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo-tiem-chu-du.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

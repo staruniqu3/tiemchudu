@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --button-outline: rgba(0,0,0,.10);
+  --badge-outline: rgba(0,0,0,.05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0,.03);
+  --elevate-2: rgba(0,0,0,.08);
+
+  /* Navy Blue + Pink + White + Gray */
+  --background: 214 32% 96%;
+  --foreground: 222 47% 14%;
+  --border: 214 20% 88%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 14%;
+  --card-border: 214 20% 90%;
+
+  --sidebar: 222 47% 14%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-border: 222 40% 20%;
+  --sidebar-primary: 330 82% 62%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 222 40% 22%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-ring: 330 82% 62%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 14%;
+  --popover-border: 214 20% 88%;
+
+  /* Pink = primary CTA */
+  --primary: 330 82% 58%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Navy = secondary */
+  --secondary: 222 52% 28%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 214 20% 93%;
+  --muted-foreground: 215 16% 50%;
+  --accent: 222 52% 28%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 214 20% 88%;
+  --ring: 330 82% 58%;
+
+  --chart-1: 330 82% 58%;
+  --chart-2: 222 52% 35%;
+  --chart-3: 45 93% 58%;
+  --chart-4: 170 60% 45%;
+  --chart-5: 280 60% 60%;
+
+  --app-font-sans: 'Be Vietnam Pro', sans-serif;
+  --app-font-serif: Georgia, serif;
+  --app-font-mono: Menlo, monospace;
+  --radius: .75rem;
+  --shadow-2xs: 0px 1px 2px 0px rgba(0,0,0,0.04);
+  --shadow-xs: 0px 1px 3px 0px rgba(0,0,0,0.07);
+  --shadow-sm: 0px 2px 6px 0px rgba(0,0,0,0.08);
+  --shadow: 0px 4px 12px 0px rgba(0,0,0,0.10);
+  --shadow-md: 0px 6px 16px 0px rgba(0,0,0,0.12);
+  --shadow-lg: 0px 8px 24px 0px rgba(0,0,0,0.14);
+  --shadow-xl: 0px 12px 32px 0px rgba(0,0,0,0.18);
+  --shadow-2xl: 0px 16px 48px 0px rgba(0,0,0,0.22);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+.dark {
+  --button-outline: rgba(255,255,255,.10);
+  --badge-outline: rgba(255,255,255,.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255,.04);
+  --elevate-2: rgba(255,255,255,.09);
+
+  --background: 222 47% 8%;
+  --foreground: 210 20% 92%;
+  --border: 222 30% 20%;
+  --card: 222 40% 12%;
+  --card-foreground: 210 20% 92%;
+  --card-border: 222 30% 20%;
+  --sidebar: 222 47% 8%;
+  --sidebar-foreground: 210 20% 92%;
+  --sidebar-border: 222 30% 20%;
+  --sidebar-primary: 330 75% 62%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 222 35% 18%;
+  --sidebar-accent-foreground: 210 20% 92%;
+  --sidebar-ring: 330 75% 62%;
+  --popover: 222 40% 12%;
+  --popover-foreground: 210 20% 92%;
+  --popover-border: 222 30% 20%;
+  --primary: 330 75% 62%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 222 50% 40%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 222 35% 18%;
+  --muted-foreground: 215 15% 55%;
+  --accent: 222 50% 40%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 222 30% 20%;
+  --ring: 330 75% 62%;
+  --chart-1: 330 75% 62%;
+  --chart-2: 222 50% 55%;
+  --chart-3: 45 90% 58%;
+  --chart-4: 170 55% 48%;
+  --chart-5: 280 55% 62%;
+
+  --shadow-2xs: 0px 1px 2px 0px rgba(0,0,0,0.3);
+  --shadow-xs: 0px 1px 3px 0px rgba(0,0,0,0.35);
+  --shadow-sm: 0px 2px 6px 0px rgba(0,0,0,0.35);
+  --shadow: 0px 4px 12px 0px rgba(0,0,0,0.4);
+  --shadow-md: 0px 6px 16px 0px rgba(0,0,0,0.45);
+  --shadow-lg: 0px 8px 24px 0px rgba(0,0,0,0.5);
+  --shadow-xl: 0px 12px 32px 0px rgba(0,0,0,0.55);
+  --shadow-2xl: 0px 16px 48px 0px rgba(0,0,0,0.6);
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply font-sans antialiased bg-background text-foreground; }
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button { @apply hidden; }
+
+  .nav-gradient {
+    background: linear-gradient(135deg, hsl(222 52% 18%) 0%, hsl(222 52% 12%) 100%);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(222 52% 22%) 0%, hsl(222 52% 30%) 50%, hsl(330 70% 45%) 100%);
+  }
+
+  .card-hover {
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .card-hover:active {
+    transform: scale(0.97);
+  }
+
+  .glass-card {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .pink-glow {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.25s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  /* ── Elite tier card backgrounds ───────────────────────── */
+  .tier-card-dragon {
+    background: linear-gradient(
+      135deg,
+      #0a0500 0%, #1a0900 15%, #3d1a00 30%,
+      #0a0500 45%, #2a1000 60%, #1a0800 75%,
+      #3d1a00 88%, #0a0500 100%
+    );
+    background-size: 300% 300%;
+    animation: dragonFlow 5s ease-in-out infinite alternate;
+    color: #fde68a;
+    position: relative;
+  }
+
+  .tier-card-dragon::before {
+    content: "";
+    position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(ellipse 70% 60% at 20% 80%, rgba(200,100,0,0.45) 0%, transparent 55%),
+                radial-gradient(ellipse 55% 50% at 80% 20%, rgba(255,140,0,0.3) 0%, transparent 50%);
+    animation: dragonGlow 3s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  @keyframes dragonFlow {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 100%; }
+  }
+
+  @keyframes dragonGlow {
+    0%   { opacity: 0.7; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+
+  .tier-card-phoenix {
+    background: linear-gradient(
+      135deg,
+      #0a0005 0%, #1a0010 15%, #3d0025 30%,
+      #0a0005 45%, #2a0018 60%, #1a000c 75%,
+      #3d0020 88%, #0a0005 100%
+    );
+    background-size: 300% 300%;
+    animation: phoenixFlow 5s ease-in-out infinite alternate;
+    color: #fecdd3;
+    position: relative;
+  }
+
+  .tier-card-phoenix::before {
+    content: "";
+    position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(ellipse 70% 60% at 20% 80%, rgba(220,20,60,0.45) 0%, transparent 55%),
+                radial-gradient(ellipse 55% 50% at 80% 20%, rgba(200,10,80,0.35) 0%, transparent 50%);
+    animation: phoenixGlow 3s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  @keyframes phoenixFlow {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 100%; }
+  }
+
+  @keyframes phoenixGlow {
+    0%   { opacity: 0.7; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+}
